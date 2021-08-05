@@ -1,0 +1,23 @@
+version: '3.3'
+services:
+   dbdiff:
+     build: ./dockerDBDiff	
+     image: coletivo_java:dbdiff
+     volumes:     
+       - ./novoBanco:/home/superBits/devTools/DBDiff/novoBanco
+       - ./referencia:/home/superBits/devTools/DBDiff/referencia
+       - ./scriptsDockerDBDIFF:/home/superBits/devTools/DBDiff/scriptGerado/
+
+   mysqlab:
+     container_name: bancoSBanaliseBanco
+     image: mysql:5.7
+     volumes:
+       - ~/laboratorioInfraSB/db_wordpress:/var/lib/mysql:Z
+     restart: always
+     environment:
+       MYSQL_ROOT_PASSWORD: senhaDev#123
+       MYSQL_DATABASE: testes
+       MYSQL_USER: usuarioTeste
+       MYSQL_PASSWORD: senhaDev#123
+
+  
