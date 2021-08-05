@@ -4,10 +4,10 @@ services:
      build: ./dockerDBDiff	
      image: coletivo_java:dbdiff
      volumes:     
-       - ./novoBanco:/home/superBits/devTools/DBDiff/novoBanco
-       - ./referencia:/home/superBits/devTools/DBDiff/referencia
-       - ./scriptsDockerDBDIFF:/home/superBits/devTools/DBDiff/scriptGerado/
-
+       - ./novoBanco/:/home/superBits/devTools/DBDiff/novoBanco/
+       - ./referencia/:/home/superBits/devTools/DBDiff/referencia/
+       - ./resultado/:/home/superBits/devTools/DBDiff/resultado/
+     
    mysqlab:
      container_name: bancoSBanaliseBanco
      image: mysql:5.7
