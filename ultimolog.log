@@ -1,0 +1,47 @@
+Step 1/20 : FROM fedora:30
+ ---> 177d5adf0c6c
+Step 2/20 : MAINTAINER salviof@gmail.com coletivojava.com.br
+ ---> Using cache
+ ---> d9b362edb46e
+Step 3/20 : RUN yum update -y
+ ---> Using cache
+ ---> f5728494caab
+Step 4/20 : RUN dnf install git -y
+ ---> Using cache
+ ---> bf262b9dc3d7
+Step 5/20 : RUN yum install mysql -y
+ ---> Using cache
+ ---> c0b443c05a17
+Step 6/20 : RUN mkdir /home/superBits/devTools/ -p
+ ---> Using cache
+ ---> b2f80327b3c1
+Step 7/20 : WORKDIR /home/superBits/
+ ---> Using cache
+ ---> d6b2942614ea
+Step 8/20 : RUN git clone https://github.com/salviof/superBitsDevOps.git
+ ---> Using cache
+ ---> 85deff8b39cc
+Step 9/20 : WORKDIR /home/superBits/devTools/
+ ---> Using cache
+ ---> 6c240944c9b1
+Step 10/20 : RUN git clone https://github.com/DBDiff/DBDiff.git
+ ---> Using cache
+ ---> 7eceeeb92d08
+Step 11/20 : RUN yum install php -y
+ ---> Using cache
+ ---> 5ea66c242cc0
+Step 12/20 : RUN php -i | grep php.ini
+ ---> Using cache
+ ---> 1461752f1d56
+Step 13/20 : RUN cat /etc/php.ini
+ ---> Using cache
+ ---> 9de9c6aa14e1
+Step 14/20 : RUN /home/superBits/devTools/DBDiff/build
+ ---> Running in b578eec73a47
+
+[91m[0m[91mPHP Fatal error:  Uncaught UnexpectedValueException: creating archive "/home/superBits/devTools/DBDiff/dist/dbdiff.phar" disabled by the php.ini setting phar.readonly in /home/superBits/devTools/DBDiff/build:10
+Stack trace:
+#0 /home/superBits/devTools/DBDiff/build(10): Phar->__construct('/home/superBits...')
+#1 {main}
+  thrown in /home/superBits/devTools/DBDiff/build on line 10
+[0m

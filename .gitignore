@@ -2,6 +2,8 @@ target/
 # which matches 'target' in any sub folder
 novoBanco/**
 referencia/**
+persistenciaBanco/**
+resultado/**
 **/target/
 */target/
 
