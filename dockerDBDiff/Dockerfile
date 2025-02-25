@@ -10,7 +10,7 @@ RUN git clone https://github.com/salviof/superBitsDevOps.git
 WORKDIR /home/superBits/devTools/
 RUN git clone https://github.com/DBDiff/DBDiff.git
 RUN yum install php -y
-RUN dnf install php-mysqli
+RUN yum install php-mysqli -y
 RUN sed -i s/';phar.readonly = On'/'phar.readonly = Off'/ /etc/php.ini
 COPY ./composer.phar /home/superBits/devTools/DBDiff/composer.phar
 COPY ./config.conf /home/superBits/devTools/DBDiff/config.conf
